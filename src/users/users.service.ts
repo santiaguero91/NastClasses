@@ -20,6 +20,7 @@ export class UsersService {
         return this.userModel.find().populate(['classes']);
     }
 
+    
     async getUserById(id: string) {
         return this.userModel.findById(id)
     }
