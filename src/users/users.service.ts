@@ -22,7 +22,7 @@ export class UsersService {
 
     
     async getUserById(id: string) {
-        return this.userModel.findById(id)
+        return this.userModel.findById(id).populate(['classes']);
     }
     async getupdateUser(id: string, UpdateUserDto:UpdateUserDto) {
        return this.userModel.findByIdAndUpdate(id , UpdateUserDto, {new:true} )

@@ -9,4 +9,8 @@ export class CreateStudentDto {
     @IsNotEmpty()
     @IsString()
     lastName: string;
+
+    @IsNotEmpty()
+    @IsString()
+    classId: string;
 } 

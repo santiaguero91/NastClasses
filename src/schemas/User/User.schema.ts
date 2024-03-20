@@ -3,9 +3,6 @@ import mongoose from 'mongoose';
 
 @Schema()
 export class User {
- 
-    /* @Prop() not needed for mongo at least
-    id: string; */
     @Prop({required:true})
     name: string;
     @Prop({unique: true, required:true})
@@ -21,17 +18,15 @@ export class User {
 
 @Schema()
 export class Class {
-    /* @Prop()
-    id: string; */
     @Prop({required:true})
     name: string;
+    @Prop({ 
+        type:[{type: mongoose.Schema.Types.ObjectId, ref:'Student'}]})
+        students: Student[];
 }
 
 @Schema()
 export class Student {
-
-    /* @Prop()
-    id: string; */
     @Prop({required:true})
     name: string;
     @Prop()
